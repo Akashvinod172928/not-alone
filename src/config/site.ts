@@ -49,9 +49,10 @@ export const siteConfig: SiteConfig = {
   },
 
   navigation: [
-    { name: "How it works", href: "#how-it-works" },
-    { name: "Experience", href: "#experience" },
-    { name: "Safety", href: "#safety" },
+    { name: "How it works", href: "/#how-it-works" },
+    { name: "Experience", href: "/#experience" },
+    { name: "Safety", href: "/#safety" },
+    { name: "Become a Companion", href: "/companions" },
   ],
 
   legal: [
@@ -65,4 +66,22 @@ export const siteConfig: SiteConfig = {
     chat: "/images/chat.png",
     profile: "/images/profile.png",
   },
+};
+
+export const COMPANION_FORM_ENDPOINT =
+  "https://script.google.com/macros/s/AKfycbxdSVO-VQ8BqZJRKtnpMbo99fZYFQZNG1ApJ-dG9cmlLIeG5o07C9uq9KP4Loq2QH1K/exec";
+
+export const GOOGLE_FORM_URL =
+  "https://docs.google.com/forms/d/e/1FAIpQLSfndDsShWEYyC5mjJWvNts8_GZAvugTi6HEA4go734Ttzgh9Q/formResponse";
+
+export const GOOGLE_FORM_FIELDS = {
+  name: "entry.912432740",
+  age: "entry.1648296502",
+  gender: "entry.247414453",
+  phone: "entry.1774629330",
+  whatsapp: "entry.434956791",
+  location: "entry.1553605767",
+  languages: "entry.1817478219",
+  about: "entry.1353896086",
+  whyJoin: "entry.1646326285",
 };

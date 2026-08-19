@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
 import { Logo } from "../ui/Logo";
 import { Button } from "../ui/Button";
 import { siteConfig } from "@/config/site";
@@ -38,13 +39,17 @@ export const Navbar: React.FC<NavbarProps> = ({ onDownloadClick }) => {
         {/* Desktop Links */}
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
           {siteConfig.navigation.map((item) => (
-            <a
+            <Link
               key={item.name}
               href={item.href}
-              className="transition-colors hover:text-[#FF3B7B] focus:outline-none focus:text-[#FF3B7B]"
+              className={`transition-colors focus:outline-none ${
+                item.href === "/companions"
+                  ? "text-[#FF3B7B] font-semibold hover:text-[#E02E69]"
+                  : "hover:text-[#FF3B7B] focus:text-[#FF3B7B]"
+              }`}
             >
               {item.name}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -89,14 +94,18 @@ export const Navbar: React.FC<NavbarProps> = ({ onDownloadClick }) => {
         <div className="md:hidden bg-white border-b border-slate-200 px-4 pt-3 pb-6 space-y-3 animate-fadeIn">
           <nav className="flex flex-col space-y-2 text-base font-medium text-slate-700">
             {siteConfig.navigation.map((item) => (
-              <a
+              <Link
                 key={item.name}
                 href={item.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="px-3 py-2 rounded-lg hover:bg-slate-50 hover:text-[#FF3B7B] transition-colors"
+                className={`px-3 py-2 rounded-lg transition-colors ${
+                  item.href === "/companions"
+                    ? "bg-rose-50 text-[#FF3B7B] font-semibold"
+                    : "hover:bg-slate-50 hover:text-[#FF3B7B]"
+                }`}
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
           </nav>
           <div className="pt-2">
